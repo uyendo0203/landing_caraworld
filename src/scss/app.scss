@@ -1,0 +1,14 @@
+@use "base/fonts" as *;
+@use 'common.scss' as *;
+@use 'header.scss' as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts */
+// @import "base/fonts";
+
+// /* Components */
+// @import "common";
+// @import "_header";

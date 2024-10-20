@@ -1,0 +1,162 @@
+html,
+body {
+  font-size: 1rem;
+  @apply font-regular font-Montserrat;
+
+
+
+  @media(min-width:2560px) {
+    font-size: 1.5rem;
+  }
+
+  @media(min-width:3000px) {
+    font-size: 30px;
+  }
+
+  @media(min-width:4000px) {
+    font-size: 50px;
+  }
+
+  @media(max-width:1919px) {
+    font-size: calc(100vw / 1200 * 10);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+///mobile text body : 4rem  
+///pc body text: 1.2rem  (text-[2rem] xl:text-[1.2rem])
+//
+
+// xl:(min-width: 1280px)
+// lg:(min-width: 1024px)
+// md:(min-width: 768px)
+// sm:(min-width: 640px)
+// xs:(min-width: 475px)
+
+.text-body {
+  @apply text-[4rem] sm:text-[3rem] md:text-[2rem] xl:text-[1.2rem];
+
+}
+
+.btn {
+  color: rgb(255, 255, 255);
+  transition: all 0.2s ease-out 0s;
+  @apply inline-flex justify-center items-center;
+  @apply px-[5rem] md:px-[15px] py-[10px];
+  @apply cursor-pointer border-0 relative;
+  @apply w-auto min-h-[35px] lg:min-h-[3rem] min-w-[10rem];
+  @extend .text-body;
+
+  &:hover {
+    color: rgb(255, 255, 255);
+  }
+}
+
+.page-title {
+  @apply text-[2.3rem] font-bold;
+  @apply mb-[1rem];
+}
+
+.loading {
+  @apply fixed w-full h-full bg-[#ffffff82] opacity-0 z-[-1];
+  @apply top-0 bottom-0 left-0 right-0;
+  transition: all 0.3s ease;
+
+  &.active {
+    @apply opacity-[1] z-[999];
+  }
+
+  path:first-child {
+    @apply fill-blue
+  }
+
+  svg {
+    @apply w-[12rem] sm:w-[8rem] lg:w-[3rem];
+    @apply h-[12rem] sm:h-[8rem] lg:h-[3rem]
+  }
+}
+
+.wapper-main {
+  @apply overflow-hidden;
+}
+
+.slider {
+  visibility: hidden;
+
+  &.slick-initialized {
+    visibility: visible;
+  }
+}
+
+.lazy-load {
+  img {
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+  }
+}
+
+img.lazy-load {
+  opacity: 1;
+}
+
+.block-spacing {
+  @apply py-[12rem] sm:py-[7rem] md:py-[9rem] lg:py-[6rem];
+}
+
+.video-size {
+  video {
+    @apply object-cover sm:object-fill;
+    @apply absolute w-full h-full;
+  }
+}
+
+.landing-video-1917 {
+  @apply opacity-[1];
+  @apply min-w-full min-h-full;
+  height: unset;
+}
+
+.bg-cover-sec1-2 {
+  content: '';
+  @apply absolute w-full h-full top-0 left-0 right-0 z-[1];
+}
+
+.header_text-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  margin: 0 auto;
+  @apply max-w-[87%] md:max-w-[53%]
+}
+
+.header_text-move {
+  // opacity: 0;
+}
+
+.header_logo-move {
+  img {
+    opacity: 1 !important;
+  }
+}
+
+.logo {
+  .works {
+
+    path,
+    polygon {
+      fill: black;
+    }
+  }
+
+  .our {
+    path {
+      fill: white;
+    }
+  }
+}
