@@ -193,16 +193,28 @@ let ourWorkSlider = function () {
 
 }
 
-jQuery(window).on('resize', function () {
-})
+jQuery(window).on('resize', function () {})
 jQuery(document).ready(function () {
 	// goToBlock('.home1 .home3__link', ".home2")
 
 	lazyLoadImage();
 	contactForm()
+
+	AOS.init();
+
+	$('.sliders').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 3000,
+		centerMode: true,
+		dots: false,
+		arrows: false,
+		cssEase: 'linear',
+		centerPadding: "27rem"
+	});
 })
-jQuery(window).on("scroll", function () {
-});
+jQuery(window).on("scroll", function () {});
 
 // --------------------------------
 
@@ -216,5 +228,3 @@ var $nav = $('nav');
 $header_top.find('a').on('click', function () {
 	$(this).parent().toggleClass('open-menu');
 });
-
-
