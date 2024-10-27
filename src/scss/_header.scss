@@ -1,0 +1,7 @@
+header {
+    @apply relative;
+}
+
+.logo {
+    @apply fixed left-[50%] translate-x-[-50%] z-[3];
+}

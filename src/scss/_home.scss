@@ -1,5 +1,52 @@
 .wrap-home {
+  @apply relative;
   img {
     width: 100%;
   }
+}
+.image-center {
+  @apply left-[50%] translate-x-[-50%];
+}
+.text-hidden {
+  @apply opacity-0 text-[0px];
+}
+.section1 {
+  @apply absolute;
+  height: 97%;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.text-1 {
+  @apply absolute top-[28rem];
+  @extend .image-center;
+  @apply text-center w-full max-w-[65%];
+  @apply z-[1];
+}
+.text-coming-soon {
+  @apply absolute z-[2] top-[34.6rem];
+  @extend .image-center;
+  @apply uppercase text-white;
+  @apply text-[4.5rem] 2xl:text-[3.5rem] font-medium;
+  @apply mt-[4rem];
+}
+.text-2 {
+  @extend .image-center;
+  @apply absolute top-[18%];
+}
+.bg-only-body {
+  @apply relative;
+  @apply z-[2];
+}
+.section2 {
+  @apply relative;
+}
+.text-4 {
+  @extend .image-center;
+  @apply z-[3];
+  @apply absolute top-[84rem];
+}
+
+.bg-img {
+  @apply text-[0px];
 }
