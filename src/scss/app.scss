@@ -1,6 +1,7 @@
 @use "base/fonts" as *;
-@use 'common.scss' as *;
-@use 'header.scss' as *;
+@use "common.scss" as *;
+@use "header.scss" as *;
+@use "home.scss" as *;
 
 @tailwind base;
 @tailwind components;

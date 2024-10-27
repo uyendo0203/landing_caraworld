@@ -1,18 +1,3 @@
-let playVideoOnMobile = function () {
-	const screenWidth = jQuery(window).width();
-	let timeout;
-	const videoEle = document.querySelector('video');
-	if (screenWidth < 767) {
-		if (videoEle) {
-			videoEle.pause()
-			clearTimeout(timeout);
-			timeout = setTimeout(() => {
-				videoEle.play()
-			}, 500);
-		}
-	}
-}
-
 let lazyLoadImage = function () {
 	function preload_image(img) {
 		img.src = img.dataset.src;
@@ -36,73 +21,6 @@ let lazyLoadImage = function () {
 
 	for (image of images) {
 		observer.observe(image);
-	}
-}
-
-function randomVideo() {
-	let xvideos = jQuery('.videos').data('videos')
-	let temp1 = xvideos?.split(',');
-	const myvideos = temp1.filter((x) => x != '')
-	const arrVideos = myvideos
-
-	var video = document.querySelector('.video-test');
-	var sources = video.getElementsByTagName('source');
-
-	const recallMe = () => {
-		const random = Math.floor(Math.random() * arrVideos.length);
-		const resultRan = arrVideos[random]
-		sources[0].src = "../videos/short/" + resultRan;
-		video.load();
-		setTimeout(function () {
-			video.play()
-		}, 150);
-	}
-
-	recallMe()
-
-	video.addEventListener("ended", function (e) {
-		recallMe()
-	});
-
-}
-
-let checkVideoWhenEnd = function () {
-	const videos = jQuery('.home2 input[name="videos-list"]')?.val()?.toString();
-	if (videos) {
-		let n = 0;
-		let array_vis = [];
-		if (videos) {
-			let temp1 = videos?.split(',');
-			array_vis = temp1.filter((x) => x != '');
-		}
-
-		var video = document.querySelector('.video-item');
-		var sources = video?.getElementsByTagName('source');
-
-		let videoLoop = function () {
-			if (array_vis.length > 0) {
-
-				if (n === 0) {
-					sources[0].src = array_vis[n];
-					video.load();
-					setTimeout(function () {
-						video.play();
-					}, 150);
-				}
-
-				video.addEventListener("ended", function (e) {
-					n = (n === array_vis.length - 1) ? 0 : n + 1;
-					sources[0].src = array_vis[n];
-					video.load();
-					setTimeout(function () {
-						video.play();
-					}, 150);
-
-				});
-			}
-		}
-
-		videoLoop()
 	}
 }
 
@@ -275,48 +193,15 @@ let ourWorkSlider = function () {
 
 }
 
-let turnOffVideoOnLocal = function () {
-	// playVideoOnMobile();
-	// checkVideoWhenEnd()
-}
-
 jQuery(window).on('resize', function () {
-	lazyLoadImage();
-	turnOffVideoOnLocal()
 })
-
 jQuery(document).ready(function () {
-	goToBlock('.home1 .home3__link', ".home2")
-	goToBlock('.home2 .home2__arrow', ".home3")
+	// goToBlock('.home1 .home3__link', ".home2")
 
 	lazyLoadImage();
-	ourWorkSlider()
 	contactForm()
-
-	turnOffVideoOnLocal()
-
 })
-
-document.addEventListener("DOMContentLoaded", function () {
-	window.onload = function () {
-		jQuery('.loading').removeClass('active');
-		window.requestAnimationFrame(function () {
-			turnOffVideoOnLocal()
-		})
-	}
-})
-
-// document.addEventListener("resize", function () {
-// 	window.onload = function () {
-
-// 		window.requestAnimationFrame(function () {
-// 			AnimationGsap()
-// 		})
-// 	}
-// })
-
 jQuery(window).on("scroll", function () {
-	// activeMenuOnScroll()
 });
 
 // --------------------------------
@@ -327,81 +212,9 @@ var $header_top = $('.header-top');
 var $nav = $('nav');
 
 
-
 // toggle menu 
 $header_top.find('a').on('click', function () {
 	$(this).parent().toggleClass('open-menu');
 });
 
 
-
-// fullpage customization
-$('#fullpage').length && $('#fullpage').fullpage({
-	sectionsColor: ['#B8AE9C', '#348899', '#F2AE72', '#5C832F', '#B8B89F'],
-	sectionSelector: '.vertical-scrolling',
-	slideSelector: '.horizontal-scrolling',
-	navigation: true,
-	slidesNavigation: true,
-	controlArrows: false,
-	anchors: ['firstSection', 'secondSection', 'thirdSection', 'fourthSection', 'fifthSection'],
-	menu: '#menu',
-
-	afterLoad: function (anchorLink, index) {
-		$header_top.css('background', 'rgba(0, 47, 77, .3)');
-		$nav.css('background', 'rgba(0, 47, 77, .25)');
-		if (index == 5) {
-			$('#fp-nav').hide();
-		}
-	},
-
-	onLeave: function (index, nextIndex, direction) {
-		if (index == 5) {
-			$('#fp-nav').show();
-		}
-	},
-
-	afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {
-		if (anchorLink == 'fifthSection' && slideIndex == 1) {
-			$.fn.fullpage.setAllowScrolling(false, 'up');
-			$header_top.css('background', 'transparent');
-			$nav.css('background', 'transparent');
-			$(this).css('background', '#374140');
-			$(this).find('h2').css('color', 'white');
-			$(this).find('h3').css('color', 'white');
-			$(this).find('p').css({
-				'color': '#DC3522',
-				'opacity': 1,
-				'transform': 'translateY(0)'
-			});
-		}
-	},
-
-	onSlideLeave: function (anchorLink, index, slideIndex, direction) {
-		if (anchorLink == 'fifthSection' && slideIndex == 1) {
-			$.fn.fullpage.setAllowScrolling(true, 'up');
-			$header_top.css('background', 'rgba(0, 47, 77, .3)');
-			$nav.css('background', 'rgba(0, 47, 77, .25)');
-		}
-	}
-});
-
-function countUp(max, time) {
-	var num = 0;
-	var step = time / max; // calculate the time between two steps of counting
-	// create an inner function that performs one step of counting
-	var fn = function () {
-		num++;
-		if (num <= max) {
-			$('.line-run').attr("stroke-dashoffset", num)
-			window.setTimeout(fn, step);
-		} else {
-			num = 0
-		}
-	}
-	// call the inner function for the first time
-	setInterval(() => {
-		fn();
-	}, time);
-}
-
-countUp(40, 1500);

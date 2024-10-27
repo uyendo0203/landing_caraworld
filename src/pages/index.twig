@@ -4,41 +4,12 @@
 {% block content %}
 <main>
     {% include "../components/header.twig" %}
-    <div id="fullpage">
-        <section class="vertical-scrolling">
-            <h2>fullPage.js</h2>
-            <h3>This is the first section</h3>
-            <p>Check new demo with fullPage.js v4
-                <a href="https://codepen.io/tutsplus/pen/yLRZwBg" target="_blank">here</a>
-            </p>
-            <div class="scroll-icon">
-                <p>Jump into the last slide</p>
-                <a href="#fifthSection/1" class="icon-up-open-big"></a>
-            </div>
-        </section>
-        <section class="vertical-scrolling">
-            <h2>fullPage.js</h2>
-            <h3>This is the second section</h3>
-        </section>
-        <section class="vertical-scrolling">
-            <h2>fullPage.js</h2>
-            <h3>This is the third section</h3>
-        </section>
-        <section class="vertical-scrolling">
-            <h2>fullPage.js</h2>
-            <h3>This is the fourth section</h3>
-        </section>
-        <section class="vertical-scrolling">
-            <div class="horizontal-scrolling">
-                <h2>fullPage.js</h2>
-                <h3>This is the fifth section and it contains the first slide (actually section == first slide)</h3>
-            </div>
-            <div class="horizontal-scrolling">
-                <h2>fullPage.js</h2>
-                <h3>This is the second slide</h3>
-                <p class="end">Thank you!</p>
-            </div>
-        </section>
+    <div class="wrap-home">
+        <div class="section1">
+            <img src="./images/bg-top.jpeg" alt="">
+            <img src="./images/the-rise-of-new-cam-ranh.png" alt="">
+        </div>
+        <img src="./images/bg-full.png" alt="">
     </div>
 </main>
 {% endblock %}
