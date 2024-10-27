@@ -48,10 +48,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "copy-css-to-khoi": "copyfiles --f dist/css/** workpress-template/ns-tba-theme/app/css",
-    "copy-js-to-khoi": "copyfiles --f dist/js/** workpress-template/ns-tba-theme/app/js",
-    "copy-css-js-to-khoi": "npm run copy-css-to-khoi && npm run copy-js-to-khoi",
-    "clean-nm": "rmdir /s /q node_modules",
+    "clean-nm": "rm -rf node_modules/",
     "clean-build": "rmdir /s /q dist && npm run build",
     "clean-dist": "rmdir /s /q dist",
     "clean-rm-dist": "rm -rf dist",
