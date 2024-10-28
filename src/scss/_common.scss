@@ -2,6 +2,8 @@ html,
 body {
   font-size: 1rem;
   @apply font-regular font-Montserrat;
+  // overflow: hidden;
+  transition: all 0.3s ease;
 
   @media (min-width: 2560px) {
     font-size: 1.5rem;
@@ -58,12 +60,87 @@ body {
 }
 
 .loading {
-  @apply fixed w-full h-full bg-[#ffffff82] opacity-0 z-[-1];
+  @apply fixed w-full h-full;
+  @apply z-[-1] opacity-[0];
   @apply top-0 bottom-0 left-0 right-0;
   transition: all 0.3s ease;
+  // @apply opacity-[1] z-[100];
 
-  &.active {
-    @apply opacity-[1] z-[999];
+  &.show {
+    @apply opacity-[1] z-[100];
+    // .cloud {
+    //   &-1 {
+    //   }
+    //   &-2 {
+    //     right: 0;
+    //     top: 0;
+    //   }
+    //   &-3 {
+    //     right: 0;
+    //     bottom: 0;
+    //   }
+    //   &-4 {
+    //     left: 0;
+    //     bottom: 0;
+    //   }
+    // }
+  }
+
+  @keyframes cloud-1 {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(-100%, -100%);
+    }
+  }
+  @keyframes cloud-2 {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(100%, -100%);
+    }
+  }
+  @keyframes cloud-3 {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(100%, 100%);
+    }
+  }
+  @keyframes cloud-4 {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(-100%, 100%);
+    }
+  }
+  .cloud {
+    @apply max-w-[75%] opacity-[0.9] absolute;
+    animation-duration: 5s;
+
+    &-1 {
+      left: 0;
+      animation-name: cloud-1;
+    }
+    &-2 {
+      right: 0;
+      top: 0;
+      animation-name: cloud-2;
+    }
+    &-3 {
+      right: 0;
+      bottom: 0;
+      animation-name: cloud-3;
+    }
+    &-4 {
+      left: 0;
+      bottom: 0;
+      animation-name: cloud-4;
+    }
   }
 
   path:first-child {

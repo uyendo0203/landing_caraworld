@@ -213,6 +213,13 @@ jQuery(document).ready(function () {
 		cssEase: 'linear',
 		centerPadding: "27rem"
 	});
+
+	setTimeout(() => {
+		$('.loading').removeClass('show')
+	}, 2500);
+
+
+
 })
 jQuery(window).on("scroll", function () {});
 
