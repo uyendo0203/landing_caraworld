@@ -24,7 +24,7 @@
   @apply z-[1];
 }
 .text-coming-soon {
-  @apply absolute z-[2] top-[65rem] xs:top-[56rem] sm:top-[40.6rem];
+  @apply absolute z-[2] top-[67rem] xs:top-[56rem] sm:top-[40.6rem];
   @extend .image-center;
   @apply uppercase text-white;
   @apply text-[6.5rem] xs:text-[4.5rem] 2xl:text-[3.5rem] font-medium;
@@ -150,5 +150,99 @@
   }
   small {
     @apply text-[20px] font-medium;
+  }
+}
+.sun-spin {
+  @apply absolute;
+  @apply top-[50rem] xs:top-[44rem] sm:top-[29rem];
+  @apply max-w-[29rem] sm:max-w-[20rem];
+  @apply left-[73%] sm:left-[57%];
+  mix-blend-mode: screen;
+  position: absolute;
+  z-index: 1;
+  // animation: 3.4s linear 6s 1 normal forwards gwd-gen-1rougwdanimation_gwd-keyframes;
+  animation: 3s linear 6s infinite forwards gwd-gen-1rougwdanimation_gwd-keyframes;
+}
+
+@keyframes gwd-gen-1rougwdanimation_gwd-keyframes {
+  0% {
+    transform: rotateZ(0deg);
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg);
+    opacity: 0;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+  }
+  8.8235% {
+    transform: rotateZ(17.7353deg);
+    -webkit-transform: rotateZ(17.7353deg);
+    -moz-transform: rotateZ(17.7353deg);
+    opacity: 1;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+  }
+  88.2353% {
+    transform: rotateZ(177.353deg);
+    -webkit-transform: rotateZ(177.353deg);
+    -moz-transform: rotateZ(177.353deg);
+    opacity: 1;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+  }
+  100% {
+    transform: rotateZ(201deg);
+    -webkit-transform: rotateZ(201deg);
+    -moz-transform: rotateZ(201deg);
+    opacity: 0;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+  }
+}
+@-webkit-keyframes gwd-gen-1rougwdanimation_gwd-keyframes {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+    opacity: 0;
+    -webkit-animation-timing-function: linear;
+  }
+  8.8235% {
+    -webkit-transform: rotateZ(17.7353deg);
+    opacity: 1;
+    -webkit-animation-timing-function: linear;
+  }
+  88.2353% {
+    -webkit-transform: rotateZ(177.353deg);
+    opacity: 1;
+    -webkit-animation-timing-function: linear;
+  }
+  100% {
+    -webkit-transform: rotateZ(201deg);
+    opacity: 0;
+    -webkit-animation-timing-function: linear;
+  }
+}
+@-moz-keyframes gwd-gen-1rougwdanimation_gwd-keyframes {
+  0% {
+    -moz-transform: rotateZ(0deg);
+    opacity: 0;
+    -moz-animation-timing-function: linear;
+  }
+  8.8235% {
+    -moz-transform: rotateZ(17.7353deg);
+    opacity: 1;
+    -moz-animation-timing-function: linear;
+  }
+  88.2353% {
+    -moz-transform: rotateZ(177.353deg);
+    opacity: 1;
+    -moz-animation-timing-function: linear;
+  }
+  100% {
+    -moz-transform: rotateZ(201deg);
+    opacity: 0;
+    -moz-animation-timing-function: linear;
   }
 }
