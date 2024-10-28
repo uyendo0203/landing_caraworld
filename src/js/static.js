@@ -214,9 +214,9 @@ jQuery(document).ready(function () {
 		centerPadding: "27rem"
 	});
 
-	setTimeout(() => {
-		$('.loading').removeClass('show')
-	}, 2500);
+	// setTimeout(() => {
+	// 	$('.loading').removeClass('show')
+	// }, 2500);
 
 
 
