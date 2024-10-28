@@ -4,4 +4,6 @@ header {
 
 .logo {
     @apply fixed left-[50%] translate-x-[-50%] z-[9];
+    @apply max-w-[90px] xs:max-w-max;
+    @apply top-[15px] xs:top-0;
 }

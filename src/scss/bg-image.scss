@@ -2,4 +2,8 @@
     background-image: url(../images/bg-top.jpeg);
     background-size: 100% auto;
     background-position-y: 47%;
+
+    @media (max-width: 640px) {
+        background-image: url(../images/bg-top-mobile.png);
+    }
 }
