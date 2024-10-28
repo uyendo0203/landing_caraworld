@@ -18,13 +18,13 @@
   width: 100%;
 }
 .text-1 {
-  @apply absolute top-[51rem] xs:top-[44rem] sm:top-[27.5rem];
+  @apply absolute top-[51rem] xs:top-[44rem] sm:top-[31.5%];
   @extend .image-center;
   @apply text-center w-full max-w-[88%] xs:max-w-[80%] sm:max-w-[65%];
   @apply z-[1];
 }
 .text-coming-soon {
-  @apply absolute z-[2] top-[67rem] xs:top-[56rem] sm:top-[40.6rem];
+  @apply absolute z-[2] top-[67rem] xs:top-[56rem] sm:top-[43%];
   @extend .image-center;
   @apply uppercase text-white;
   @apply text-[6.5rem] xs:text-[4.5rem] 2xl:text-[3.5rem] font-medium;
@@ -154,14 +154,14 @@
 }
 .sun-spin {
   @apply absolute;
-  @apply top-[50rem] xs:top-[44rem] sm:top-[29rem];
-  @apply max-w-[29rem] sm:max-w-[20rem];
+  @apply top-[50rem] xs:top-[44rem] sm:top-[35%];
+  @apply max-w-[29rem] sm:max-w-[15rem] w-full;
   @apply left-[73%] sm:left-[57%];
   mix-blend-mode: screen;
   position: absolute;
   z-index: 1;
   // animation: 3.4s linear 6s 1 normal forwards gwd-gen-1rougwdanimation_gwd-keyframes;
-  animation: 3s linear 6s infinite forwards gwd-gen-1rougwdanimation_gwd-keyframes;
+  animation: linear 6s infinite forwards gwd-gen-1rougwdanimation_gwd-keyframes;
 }
 
 @keyframes gwd-gen-1rougwdanimation_gwd-keyframes {
